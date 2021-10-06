@@ -10,14 +10,19 @@
   <div class="row">
     <!-- displaying News articles -->
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <h2 class="text-center"> {{ news_item.title }} </h2>
+      <h2 class="text-center" href="/article/{{ news_item.id }}" > {{ news_item.title }} </h2>
+    </div>
+
+    <!--Display news Article images  -->
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <img src="{{news_item.article_image.url}}" class="img-responsive img-thumbnail" alt="Image">
     </div>
 
   </div>
 
   {% empty %}
   <div class="row">
-    <h2 class="text-center">There Are No News Items for this Date</h2>
+    <h2 class="text-center">There No News Items</h2>
   </div>
   {% endfor %}
 
